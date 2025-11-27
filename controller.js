@@ -25,7 +25,7 @@ export default {
         console.log("Get /api/todos/{id} : readTodoId")
         try {
             // ⚠️ VERSION VULNÉRABLE : pas de parseInt() !
-            const id = req.params.id;
+            const id = parseInt(req.params.id);
             const todo = await db.getTodoById(id);
             console.log("Read",todo)
             if (!todo) {
